@@ -132,8 +132,8 @@ public:
     // Load the Robot Viz Tools for publishing to Rviz
     visual_tools_.reset(new moveit_visual_tools::MoveItVisualTools(grasp_data_.base_link_, "/end_effector_marker", planning_scene_monitor_));
     visual_tools_->setLifetime(40.0);
-    visual_tools_->setMuted(false);
-    visual_tools_->loadEEMarker(grasp_data_.ee_group_, planning_group_name_);
+    //visual_tools_->setMuted(false);
+    //visual_tools_->loadEEMarker(grasp_data_.ee_group_, planning_group_name_);
     visual_tools_->setFloorToBaseHeight(-0.9);
 
     // Clear out old collision objects just because
@@ -182,8 +182,8 @@ public:
       grasp_filter_->filterGrasps(possible_grasps, ik_solutions, filter_pregrasps, grasp_data_.ee_parent_link_, planning_group_name_);
 
       // Visualize them
-      visual_tools_->publishAnimatedGrasps(possible_grasps, grasp_data_.ee_parent_link_);      
-      visual_tools_->publishIKSolutions(ik_solutions, planning_group_name_, 0.25);
+      //visual_tools_->publishAnimatedGrasps(possible_grasps, grasp_data_.ee_parent_link_);      
+      //visual_tools_->publishIKSolutions(ik_solutions, planning_group_name_, 0.25);
 
       // Make sure ros is still going
       if(!ros::ok())

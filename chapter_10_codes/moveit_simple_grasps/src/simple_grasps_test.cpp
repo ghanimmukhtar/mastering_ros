@@ -96,7 +96,7 @@ public:
     // Load the Robot Viz Tools for publishing to Rviz
     visual_tools_.reset(new moveit_visual_tools::MoveItVisualTools(grasp_data_.base_link_));
     visual_tools_->setLifetime(120.0);
-    visual_tools_->setMuted(false);
+    //visual_tools_->setMuted(false);
     visual_tools_->loadMarkerPub();
 
     // ---------------------------------------------------------------------------------------------
@@ -113,14 +113,14 @@ public:
     {
       // Test visualization of end effector in OPEN position
       grasp_data_.setRobotStatePreGrasp( visual_tools_->getSharedRobotState() );
-      visual_tools_->loadEEMarker(grasp_data_.ee_group_, planning_group_name_);
-      visual_tools_->publishEEMarkers(pose, rviz_visual_tools::ORANGE, "test_eef");
+      //visual_tools_->loadEEMarker(grasp_data_.ee_group_);
+      //visual_tools_->publishEEMarkers(pose, rviz_visual_tools::ORANGE, "test_eef");
       ros::Duration(1.0).sleep();
 
       // Test visualization of end effector in CLOSED position
       grasp_data_.setRobotStateGrasp( visual_tools_->getSharedRobotState() );
-      visual_tools_->loadEEMarker(grasp_data_.ee_group_, planning_group_name_);
-      visual_tools_->publishEEMarkers(pose, rviz_visual_tools::GREEN, "test_eef");
+      //visual_tools_->loadEEMarker(grasp_data_.ee_group_);
+      //visual_tools_->publishEEMarkers(pose, rviz_visual_tools::GREEN, "test_eef");
       ros::Duration(1.0).sleep();      
     }
 
@@ -150,7 +150,7 @@ public:
       simple_grasps_->generateBlockGrasps( object_pose, grasp_data_, possible_grasps);
 
       // Visualize them
-      visual_tools_->publishAnimatedGrasps(possible_grasps, grasp_data_.ee_parent_link_);
+      //visual_tools_->publishAnimatedGrasps(possible_grasps, grasp_data_.ee_parent_link_);
       //visual_tools_->publishGrasps(possible_grasps, grasp_data_.ee_parent_link_);
 
       // Test if done
