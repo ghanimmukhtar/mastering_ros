@@ -5,14 +5,14 @@ left_hand:
     end_effector_name: 'left_hand'  #ee group name
 
     #actuated joints in end effector
-    joints : ['left_gripper_l_finger_joint']
+    joints : ['l_gripper_r_finger_joint', l_gripper_l_finger_joint']
 
     #open position
-    pregrasp_posture : [0.0095]
+    pregrasp_posture : [-0.02, 0.02]
     pregrasp_time_from_start : 4.0
 
     #close position
-    grasp_posture : [-0.0125]
+    grasp_posture : [0.0, 0.0]
     grasp_time_from_start : 4.0
 
     #desired pose from end effector to grasp - [x,y,z]
@@ -27,7 +27,7 @@ right_hand:
     end_effector_name: 'right_hand'  #ee group name
 
     #actuated joints in end effector
-    joints : ['right_gripper_l_finger_joint']
+    joints : ['r_gripper_l_finger_joint']
 
     #open position
     pregrasp_posture : [0.0095]
